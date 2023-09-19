@@ -21,6 +21,7 @@ public class Main {
                 author = x.nextLine();
                 System.out.println("Please enter the ISBN of the Book: ");
                 isbn = x.nextInt();
+                x.nextLine();
                 list.add(new Book(isbn, author, name));
             }
             else if(type.equals("P")){
@@ -28,19 +29,13 @@ public class Main {
                 name = x.nextLine();
                 System.out.println("Please enter the issue number: ");
                 isbn = x.nextInt();
+                x.nextLine();
                 list.add(new Periodicals(isbn, name));
             }
         }
+        System.out.println("Your Items: ");
         for(int i = 0; i < 5; i++){
-            System.out.println(list.get(i).getListing());
-
-            /*if(list.get(i).getClass() == Book.class){
-                System.out.println(list.get(i).getListing());
-            }
-            else if(list.get(i).getClass() == Periodicals.class){
-                System.out.println(list.get(i).getListing());
-            }*/
-
+            System.out.println(list.get(i).getListing() + "\n");
         }
     }
 }
